@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>login</artifactId>
+        <groupId>com.huanglong.login</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>login-user</artifactId>
+      <dependencies>
+
+          <dependency>
+             <groupId>com.huanglong.login</groupId>
+             <artifactId>common-api</artifactId>
+              <version>1.0-SNAPSHOT</version>
+          </dependency>
+
+          <!--boot web actuator -->
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-web</artifactId>
+          </dependency>
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-actuator</artifactId>
+          </dependency>
+          <!--        springboot整合redis的依赖-->
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-data-redis</artifactId>
+          </dependency>
+          <!-- spring2.X集成redis所需common-pool2-->
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-pool2</artifactId>
+              <version>2.6.0</version>
+          </dependency>
+          <!--      使用mybatisPlus-->
+          <dependency>
+              <groupId>com.baomidou</groupId>
+              <artifactId>mybatis-plus-boot-starter</artifactId>
+              <version>3.5.2</version>
+          </dependency>
+          <!--   mybatis-plus自动代码生成器1      -->
+          <dependency>
+              <groupId>com.baomidou</groupId>
+              <artifactId>mybatis-plus-generator</artifactId>
+              <version>3.5.1</version>
+          </dependency>
+          <!--   mybatis-plus自动代码生成器2      -->
+          <dependency>
+              <groupId>org.freemarker</groupId>
+              <artifactId>freemarker</artifactId>
+              <version>2.3.29</version>
+          </dependency>
+
+          <dependency>
+              <groupId>com.alibaba</groupId>
+              <artifactId>druid-spring-boot-starter</artifactId>
+          </dependency>
+          <!--mysql-connector-java-->
+          <dependency>
+              <groupId>mysql</groupId>
+              <artifactId>mysql-connector-java</artifactId>
+          </dependency>
+          <!--jdbc-->
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-jdbc</artifactId>
+          </dependency>
+
+          <!--        springboot整合redis的依赖-->
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-data-redis</artifactId>
+          </dependency>
+          <!-- spring2.X集成redis所需common-pool2-->
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-pool2</artifactId>
+              <version>2.6.0</version>
+          </dependency>
+          <!--    springSecurity依赖-->
+          <dependency>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-starter-security</artifactId>
+          </dependency>
+          <dependency>
+              <groupId>org.springframework.security</groupId>
+              <artifactId>spring-security-test</artifactId>
+              <scope>test</scope>
+          </dependency>
+      </dependencies>
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>

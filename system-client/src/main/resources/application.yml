@@ -1,0 +1,20 @@
+server:
+  port: 80
+spring:
+  application:
+    name: system-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+feign:
+
+  #fegin自己配置超时时间
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 600000
+
+

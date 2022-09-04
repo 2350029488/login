@@ -1,0 +1,24 @@
+1.redis版本问题
+在引入redis版本的时候报错java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/exc/InvalidDefinitionException
+解决：换个jackson依赖
+ <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-json</artifactId>
+        </dependency>
+=================================================================================
+2.openFeign在远程调用时默认不会携带请求头等信息，导致在服务器获取的token值一直为空
+解决：需要在客户端配置FeginConfiguration，把请求头设置在拦截器中
+
+3.网关全局过滤器认证所有动态路由的请求，怎么排除指定的请求不经过全局过滤器
+解决：
+创建 NotAuthUrlProperties类，通过获取配置文件的集合，在全局过滤器中进行方法调用
+  private boolean shouldSkip(String currentUrl) {
+        PathMatcher pathMatcher = new AntPathMatcher();
+        for (String skipPath : notAuthUrlProperties.getShouldSkipUrls()) {
+            if (pathMatcher.match(skipPath, currentUrl)) {
+                return true;
+            }
+        }
+        return false;
+    }
+  就是通过自己配置的不需要认证的请求的集合，当请求进来时在这个集合中进行查找，如果存在则释放过滤器

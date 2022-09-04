@@ -1,0 +1,24 @@
+server:
+  port: 7799
+spring:
+  redis:
+    host: 192.168.43.226
+    port: 6379
+
+
+  application:
+    name: login-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test_user?serverTimezone=GMT%2B8
+    password: root
+    username: root
+    type: com.alibaba.druid.pool.DruidDataSource  #这里使用druid数据源（引入了jar包的）
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
